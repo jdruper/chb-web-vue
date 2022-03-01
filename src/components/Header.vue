@@ -1,6 +1,6 @@
 <template>
-  <header class="w-full flex items-center p-4 justify-between pb-0">
-    <div class="flex items-center flex-grow">
+  <header class="w-full flex items-center p-4 justify-around sm:justify-between pb-0">
+    <div class="flex items-center sm:flex-grow">
       <img
         src="../assets/logo-chb.png"
         alt="Logo Comunidad Hierba Buena"
@@ -11,7 +11,7 @@
         ><span class="text-accent text-2xl font-sans uppercase">Comunidad</span>
       </div>
     </div>
-    <div class="block sm:hidden w-12">
+    <div class="block sm:hidden w-12" @click="toggleMenu">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
@@ -29,38 +29,48 @@
     </div>
     <nav class="flex-grow hidden sm:block">
       <ul class="text-grey text-xl flex justify-evenly font-bold">
-        <li>
+        <li v-for="(item, index) of menuItems" :key="index">
           <router-link
-            to="/"
+            :to="item.url"
             class="hover:text-accent transition-colors"
-            >Inicio</router-link
-          >
-        </li>
-        <li>
-          <router-link to="/quienes-somos" class="hover:text-accent transition-colors"
-            >Qui&eacute;nes Somos</router-link
-          >
-        </li>
-        <li>
-          <a href="/blog" class="hover:text-accent transition-colors">Blog</a>
-        </li>
-        <li>
-          <a href="/contacto.html" class="hover:text-accent transition-colors"
-            >Contacto</a
+            >{{ item.text }}</router-link
           >
         </li>
       </ul>
     </nav>
   </header>
+  <mobile-menu
+    :menu-items="this.menuItems"
+    @close-menu="toggleMenu"
+    :class="{ 'opacity-0': !showMobileMenu, 'opacity-100': showMobileMenu }"
+    class="transition-opacity ease-in duration-300 sm:hidden"
+  />
 </template>
 
 <script>
+import MobileMenu from './MobileMenu.vue';
+
 export default {
   name: 'Header',
+  data: function () {
+    return {
+      menuItems: [
+        { url: '/', text: 'Inicio' },
+        { url: '/quienes-somos', text: 'Quiénes Somos' },
+        { url: '/blog', text: 'Blog' },
+        { url: '/contacto', text: 'Contacto' },
+      ],
+      showMobileMenu: false,
+    };
+  },
+  methods: {
+    toggleMenu: function () {
+      this.showMobileMenu = !this.showMobileMenu;
+    },
+  },
+  components: { MobileMenu },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-    
-</style>
+<style lang="scss" scoped></style>

@@ -5,3 +5,8 @@
 @tailwind utilities;
 
 @import 'styles/fonts.scss';
+@import 'styles/toaster.scss';
+
+.active-link-class {
+    @apply text-accent sm:text-primary;
+}

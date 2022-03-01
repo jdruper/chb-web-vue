@@ -1,45 +1,21 @@
 <template>
   <section
-    class="flex flex-col sm:flex-row justify-between p-4 sm:flex-wrap h-5/6"
+    class="flex flex-col justify-around p-4 h-5/6 text-center items-center"
   >
-    <div class="flex flex-col flex-1 w-auto justify-center">
-      <div>
-      <div class="text-5xl mb-4 w-8/12">
-        Bienvenid<span class="font-serif text-6xl">@</span> a nuestro
-        <span class="text-primary">experimento social.</span>
-      </div>
-      <div class="uppercase text-grey tracking-wider w-9/12">
-        Inspirate con nosotr@s y contectate con el mundo de las ecoaldeas en
-        Costa Rica.
-      </div>
-      </div>
-      <button
-        class="
-          cursor-pointer
-          mt-12
-          uppercase
-          bg-accent
-          w-2/5
-          rounded-md
-          px-2.5
-          py-3.5
-          font-bold
-          text-lg
-          tracking-wider
-          border-accent
-          border-4
-          transition-all
-          duration-300
-          hover:bg-white
-          hover:text-accent
-          hover:border-accent
-          shadow-md
-        "
-      >
-        Ver m&aacute;s
-      </button>
+    <div class="text-5xl w-4/6">
+      <span class="text-primary">Formemos</span> redes.
+      <span class="text-primary">Aprendamos</span> junt<span
+        class="font-serif text-6xl"
+        >@</span
+      >s. <span class="text-primary">Co-creemos</span>
+      un mundo mejor.
     </div>
-    <div class="w-8/12 bg-top bg-cover rounded-md bg-foto-comunidad"></div>
+    <button
+      @click="copyToClipboard"
+      class="cursor-pointer bg-accent w-2/5 rounded-md px-2.5 py-3.5 text-3xl tracking-wider border-accent border-4 transition-all duration-300 hover:bg-white hover:text-accent hover:border-accent shadow-md"
+    >
+      hola@hierbabuenacr.org
+    </button>
     <div class="flex flex-col items-end w-full self-end">
       <div class="flex mb-2">
         <a
@@ -48,15 +24,7 @@
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="
-              h-12
-              w-12
-              fill-current
-              text-primary
-              mr-2.5
-              hover:text-accent
-              transition-colors
-            "
+            class="h-12 w-12 fill-current text-primary mr-2.5 hover:text-accent transition-colors"
             viewBox="0 0 500 500"
           >
             <path
@@ -73,14 +41,7 @@
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 504.4 504.4"
-            class="
-              h-12
-              w-12
-              fill-current
-              text-primary
-              hover:text-accent
-              transition-colors
-            "
+            class="h-12 w-12 fill-current text-primary hover:text-accent transition-colors"
           >
             <path
               d="M296.8,219.8c-10-14-26.4-23.2-44.8-23.2c-18.4,0-34.8,9.2-44.8,23.2c-6.4,9.2-10.4,20.4-10.4,32.4
@@ -110,11 +71,25 @@
 </template>
 
 <script>
+import { useToast } from 'vue-toastification';
 export default {
-  name: 'Inicio',
-  components: {},
+  name: 'Contacto',
+  setup() {
+    // const toast = useToast();
+    // toast("I'm a toast!");
+    // return { toast };
+  },
+  methods: {
+    copyToClipboard: () => {
+      const toast = useToast();
+      navigator.clipboard.writeText('hola@hierbabuena.cr');
+      toast.success('¡Correo copiado, pégalo y escríbenos!', {
+        timeout: 3000,
+        position: 'bottom-right',
+      });
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
