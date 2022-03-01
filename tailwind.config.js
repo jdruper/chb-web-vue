@@ -1,5 +1,6 @@
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  presets: [],
   theme: {
     extend: {
       fontFamily: {
@@ -37,4 +38,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}
