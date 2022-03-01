@@ -1,6 +1,5 @@
 module.exports = {
-  content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  presets: [],
+  content: ['./public/**/*.html', './index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -9,7 +8,7 @@ module.exports = {
       },
       backgroundImage: {
         'circle-pattern': "url('./assets/round.png')",
-        'foto-comunidad': "url('./assets/foto-comunidad.jpg')",
+        'foto-comunidad': "url('../assets/foto-comunidad.jpg')",
       },
     },
     textColor: {

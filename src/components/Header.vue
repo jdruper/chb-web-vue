@@ -42,8 +42,8 @@
   <mobile-menu
     :menu-items="this.menuItems"
     @close-menu="toggleMenu"
-    :class="{ 'opacity-0': !showMobileMenu, 'opacity-100': showMobileMenu }"
-    class="transition-opacity ease-in duration-300 sm:hidden"
+    :class="{ 'opacity-0 -left-full': !showMobileMenu, 'opacity-100 left-0': showMobileMenu }"
+    class="transition-all ease-in duration-300 sm:hidden"
   />
 </template>
 
@@ -51,7 +51,7 @@
 import MobileMenu from './MobileMenu.vue';
 
 export default {
-  name: 'Header',
+  name: 'HeaderComponent',
   data: function () {
     return {
       menuItems: [

@@ -3,12 +3,7 @@
     class="flex flex-col justify-between p-4 h-5/6 text-center items-center"
   >
     <div class="text-4xl sm:text-5xl sm:w-3/6 pt-8 sm:pt-16">
-      <span class="text-primary">Formemos</span> redes.
-      <span class="text-primary">Aprendamos</span> junt<span
-        class="font-serif text-5xl"
-        >@</span
-      >s. <span class="text-primary">Co-creemos</span>
-      un mundo mejor.
+      <span class="text-primary">Blog</span>
     </div>
     <button
       @click="copyToClipboard"
@@ -73,7 +68,7 @@
 <script>
 import { useToast } from 'vue-toastification';
 export default {
-  name: 'ContactoView',
+  name: 'BlogView',
   methods: {
     copyToClipboard: () => {
       const toast = useToast();

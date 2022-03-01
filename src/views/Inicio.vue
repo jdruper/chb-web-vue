@@ -111,7 +111,7 @@
 
 <script>
 export default {
-  name: 'Inicio',
+  name: 'InicioView',
   components: {},
 };
 </script>
