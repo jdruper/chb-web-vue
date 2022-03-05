@@ -1,5 +1,7 @@
 <template>
-  <header class="w-full flex items-center p-4 justify-around sm:justify-between pb-0">
+  <header
+    class="w-full flex items-center p-4 justify-around sm:justify-between container mx-auto"
+  >
     <div class="flex items-center sm:flex-grow">
       <img
         src="../assets/logo-chb.png"
@@ -42,24 +44,23 @@
   <mobile-menu
     :menu-items="this.menuItems"
     @close-menu="toggleMenu"
-    :class="{ 'opacity-0 -left-full': !showMobileMenu, 'opacity-100 left-0': showMobileMenu }"
+    :class="{
+      'opacity-0 -left-full': !showMobileMenu,
+      'opacity-100 left-0': showMobileMenu,
+    }"
     class="transition-all ease-in duration-300 sm:hidden"
   />
 </template>
 
 <script>
 import MobileMenu from './MobileMenu.vue';
+import menuItems from '../shared/menu-items.js';
 
 export default {
   name: 'HeaderComponent',
   data: function () {
     return {
-      menuItems: [
-        { url: '/', text: 'Inicio' },
-        { url: '/quienes-somos', text: 'Quiénes Somos' },
-        { url: '/blog', text: 'Blog' },
-        { url: '/contacto', text: 'Contacto' },
-      ],
+      menuItems: menuItems,
       showMobileMenu: false,
     };
   },

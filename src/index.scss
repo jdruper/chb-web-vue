@@ -3,5 +3,9 @@
 @import 'styles/toaster.scss';
 
 .active-link-class {
-    @apply text-accent sm:text-primary;
+  @apply text-accent sm:text-primary;
+}
+
+footer .active-link-class {
+  @apply text-accent;
 }

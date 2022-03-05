@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full flex flex-col p-4 pb-0 bg-black absolute top-0 left-0 h-screen"
+    class="w-full flex flex-col p-4 pb-0 bg-black absolute top-0 h-screen"
   >
     <div class="flex items-center justify-around">
       <div class="flex">

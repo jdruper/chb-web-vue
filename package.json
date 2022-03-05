@@ -9,11 +9,14 @@
   },
   "dependencies": {
     "autoprefixer": "^10",
+    "axios": "^0.26.0",
     "core-js": "^3.6.5",
     "postcss": "^8",
+    "rxjs": "^7.5.4",
     "tailwindcss": "^3",
     "vue": "^3.0.0",
     "vue-router": "^4.0.12",
+    "vue-rx": "^6.2.0",
     "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
